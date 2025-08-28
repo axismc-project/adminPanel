@@ -1,0 +1,83 @@
+# --- Node / package managers ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Yarn Berry (garde seulement ce qui doit être versionné)
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+.yarnrc.yml
+
+# --- Next.js ---
+.next/
+.next/cache/
+out/                 # si tu fais "next export"
+# Si tu utilises TurboRepo
+.turbo/
+
+# --- Builds / transpilation ---
+dist/
+build/
+*.tsbuildinfo
+.eslintcache
+
+# --- Environnements ---
+.env
+.env.*
+!.env.example        # garde un exemple versionné
+.env.local
+.env.*.local
+
+# --- Logs ---
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- OS / éditeurs ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json  # garde les réglages partagés si tu veux
+
+# --- Vercel ---
+.vercel/
+
+# --- Tests & coverage ---
+coverage/
+.nyc_output/
+# Playwright
+playwright-report/
+test-results/
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# --- Storybook ---
+storybook-static/
+
+# --- Prisma / bases locales ---
+# ignore les bases locales (ex: SQLite) mais garde les migrations
+prisma/*.db
+prisma/*.db-journal
+
+# --- Uploads temporaires (ex: pré-prod locale) ---
+tmp/
+temp/
+
+# --- Divers ---
+*.pid
+*.seed
