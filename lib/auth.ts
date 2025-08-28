@@ -38,7 +38,11 @@ export function generateToken(adminId: string): string {
 
 export function verifyToken(token: string): { adminId: string } | null {
   try {
-    return jwt.verify(token, JWT_SECRET) as { adminId: string };
+    const decoded = jwt.verify(token, JWT_SECRET);
+    if (typeof decoded === 'object' && decoded !== null && 'adminId' in decoded) {
+      return decoded as { adminId: string };
+    }
+    return null;
   } catch {
     return null;
   }
